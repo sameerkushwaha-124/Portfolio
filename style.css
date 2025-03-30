@@ -9,10 +9,13 @@
 }
 
 body {
+
   font-family: "Poppins", sans-serif;
 }
 
 html {
+  background-color: whitesmoke;
+
   scroll-behavior: smooth;
 }
 
