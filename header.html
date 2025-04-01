@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav id="header" class="fixed w-full bg-[#23272f] border-b border-gray-700 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="flex justify-between items-center h-16">
+            <div class="text-3xl md:text-3xl font-extrabold text-gray-900 dark:text-white tracking-wide">
+              <span class="bg-gradient-to-r from-teal-500 to-blue-500 text-transparent bg-clip-text">
+                <span class="hover:text-teal-500 transition-all duration-300">S</span>
+                <span class="hover:text-blue-500 transition-all duration-300">a</span>
+                <span class="hover:text-purple-500 transition-all duration-300">m</span>
+                <span class="hover:text-pink-500 transition-all duration-300">e</span>
+                <span class="hover:text-yellow-500 transition-all duration-300">e</span>
+                <span class="hover:text-red-500 transition-all duration-300">r</span>
+                <span class="ml-1 hover:text-gray-500 transition-all duration-300">K</span>
+                <span class="hover:text-indigo-500 transition-all duration-300">u</span>
+                <span class="hover:text-green-500 transition-all duration-300">s</span>
+                <span class="hover:text-orange-500 transition-all duration-300">h</span>
+                <span class="hover:text-cyan-500 transition-all duration-300">w</span>
+                <span class="hover:text-lime-500 transition-all duration-300">a</span>
+                <span class="hover:text-rose-500 transition-all duration-300">h</span>
+                <span class="hover:text-amber-500 transition-all duration-300">a</span>
+              </span>
+            </div>
+    
+    
+            <!-- Desktop Menu -->
+            <div class="desktop-menu flex items-center gap-6">
+              <div class="group relative">
+                <a href="#about" class="px-4 py-2 rounded-lg font-medium bg-gradient-to-r from-teal-400 to-cyan-500 bg-clip-text text-transparent hover:opacity-80 transition-all duration-200 group-hover:bg-teal-900/50">
+                  About
+                  <span class="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-teal-400 to-cyan-500 transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100 w-full"></span>
+                </a>
+              </div>
+            
+              <div class="group relative">
+                <a href="#projects" class="px-4 py-2 rounded-lg font-medium bg-gradient-to-r from-teal-400 to-cyan-500 bg-clip-text text-transparent hover:opacity-80 transition-all duration-200 group-hover:bg-teal-900/50">
+                  Projects
+                  <span class="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-teal-400 to-cyan-500 transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100 w-full"></span>
+                </a>
+              </div>
+            
+              <div class="group relative">
+                <a href="#experience" class="px-4 py-2 rounded-lg font-medium bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent hover:opacity-80 transition-all duration-200 group-hover:bg-cyan-600/50">
+                  Experience
+                  <span class="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100 w-full"></span>
+                </a>
+              </div>
+            
+              <div class="group relative">
+                <a href="#contact" class="px-4 py-2 rounded-lg font-medium bg-gradient-to-r from-teal-400 to-cyan-500 bg-clip-text text-transparent hover:opacity-80 transition-all duration-200 group-hover:bg-teal-900/50">
+                  Contact
+                  <span class="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-teal-400 to-cyan-500 transition-all duration-300 origin-left scale-x-0 group-hover:scale-x-100 w-full"></span>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu md:hidden p-2 rounded-lg hover:bg-zinc-800 transition-colors duration-200" onclick="toggleMenu()">
+              <svg class="w-6 h-6 text-transparent bg-gradient-to-r from-teal-400 to-cyan-500 bg-clip-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+        </div>
+    
+        <!-- Mobile Menu Links -->
+        <div class="mobile-links hidden md:hidden bg-[#23272f] px-4 pb-4">
+          <a href="#about" class="block py-2 hover:text-gray-300" onclick="toggleMenu()">About</a>
+          <a href="#projects" class="block py-2 hover:text-gray-300" onclick="toggleMenu()">Projects</a>
+          <a href="#experience" class="block py-2 hover:text-gray-300" onclick="toggleMenu()">Experience</a>
+          <a href="#contact" class="block py-2 hover:text-gray-300" onclick="toggleMenu()">Contact</a>
+        </div>
+      </nav>
+</body>
+</html>

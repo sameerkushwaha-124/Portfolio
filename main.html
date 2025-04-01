@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='main' class="pt-16">
+        <!-- Profile Section -->
+        <section id="about"
+          class="min-h-screen flex flex-col md:flex-row items-center justify-between px-8 py-20 max-w-6xl mx-auto">
+          <div class="md:w-1/3 flex justify-center mb-8 md:mb-0 relative">
+            <img src="./assets/2.png" alt="Sameer Kushwaha"
+              class="rounded-xl h-54 md:h-80 object-contain border-4 border-gray-700 shadow-custom bg-zinc-900 p-2" />
+    
+          </div>
+    
+          <style>
+            /* Custom Teal and Light Cyan Shadow */
+            .shadow-custom {
+              box-shadow:
+                0 0 5px #14b8a6,
+                /* Teal */
+                0 0 9px #38bdf8,
+                /* Light Cyan */
+                0 0 15px #14b8a6,
+                /* Teal */
+                0 0 20px #38bdf8;
+              /* Light Cyan */
+            }
+          </style>
+    
+          <div class="md:w-1/2 text-center md:text-left">
+            <p class="text-gray-400 mb-2 text-lg animate-fadeIn">Hello, I'm</p>
+    
+            <!-- Name with Gradient Glow Effect -->
+            <h1
+              class="text-4xl md:text-5xl font-bold font-extrabold mb-4 bg-gradient-to-r from-teal-400 to-blue-500 text-transparent bg-clip-text animate-slideIn">
+              Sameer Kushwaha
+            </h1>
+    
+            <!-- Typing Effect with Fixed Width -->
+            <p class="text-xl text-gray-300 mb-6 relative w-[250px] md:w-[300px] h-[30px]">
+              <span id="typing-text" class="font-semibold text-white"></span>
+              <span class="absolute top-0 left-0 w-full h-full">&nbsp;</span> <!-- Placeholder to maintain size -->
+              
+            </p>
+    
+            <!-- Buttons -->
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-6">
+              <button
+                class="border-2 border-white text-white px-6 py-2 rounded-lg transition-all duration-300 hover:bg-white hover:text-black hover:shadow-lg backdrop-blur-md"
+                onclick="window.open('https://drive.google.com/file/d/1U9K_IXCTUssuwOt3ywoskZc56u3SYcRJ/view?usp=sharing')">
+                📄 Download CV
+              </button>
+              <button
+                class="bg-white text-black px-6 py-2 rounded-lg transition-all duration-300 hover:bg-gray-200 hover:shadow-lg"
+                onclick="location.href='#contact'">
+                📬 Contact Info
+              </button>
+            </div>
+    
+            <!-- Social Icons -->
+            <div class="flex justify-center md:justify-start gap-4">
+              <img src="./assets/linkedin1.png" alt="LinkedIn"
+                class="w-12 h-12 cursor-pointer hover:opacity-70 transition transform hover:scale-110 hover:shadow-lg"
+                onclick="window.open('https://www.linkedin.com/in/sameerkushwaha124/', '_blank')" />
+              <img src="./assets/github.png" alt="GitHub"
+                class="w-10 h-10 cursor-pointer hover:opacity-70 transition transform hover:scale-110 hover:shadow-lg"
+                onclick="window.open('https://github.com/sameerkushwaha-124?tab=repositories', '_blank')" />
+    
+              <img src="./assets/leetcode (1).png" alt="LeetCode"
+                class="w-10 h-10 cursor-pointer hover:opacity-70 transition transform hover:scale-110 hover:shadow-lg"
+                onclick="window.open('https://github.com/sameerkushwaha-124?tab=repositories', '_blank')" />
+            </div>
+          </div>
+        </section>
+    
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 px-8 max-w-6xl mx-auto bg-zinc-900">
+          <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center text-white mb-6">
+              <span class="bg-gradient-to-r from-blue-400 to-purple-600 text-transparent bg-clip-text">Experience</span>
+            </h2>
+            
+            <div class="max-w-3xl mx-auto mb-16">
+              <p class="text-lg text-gray-300 text-center leading-relaxed bg-zinc-800 rounded-xl p-6 shadow-lg border border-zinc-700">
+                Passionate Full Stack Developer skilled in MERN stack, Java, and Python, with expertise in AI and scalable web applications. 
+                Solved 800+ DSA problems on LeetCode and built projects like BookMate (MERN bookstore app), Employee Management System 
+                and an AI-powered Chatbot Q&A system using Google Gemini Pro and Streamlit. Strong in system design and problem-solving, 
+                seeking opportunities to innovate and optimize real-world solutions.
+              </p>
+            </div>
+        
+            <div class="grid md:grid-cols-2 gap-8">
+              <!-- Frontend Development Card -->
+              <div class="bg-zinc-800 p-8 rounded-xl shadow-lg border border-zinc-700 hover:border-purple-500 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="flex items-center mb-6">
+                  <div class="bg-purple-600 p-2 rounded-lg mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold text-white">Frontend Development</h3>
+                </div>
+                <div class="space-y-5">
+                  <div class="flex items-start">
+                    <div class="bg-purple-600 p-1 rounded-full mt-1 mr-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-white">HTML/CSS</h4>
+                      <p class="text-gray-400 text-sm">Experienced</p>
+                      <div class="w-full bg-zinc-700 rounded-full h-2 mt-2">
+                        <div class="bg-purple-600 h-2 rounded-full" style="width: 90%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="bg-purple-600 p-1 rounded-full mt-1 mr-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-white">JavaScript</h4>
+                      <p class="text-gray-400 text-sm">Intermediate</p>
+                      <div class="w-full bg-zinc-700 rounded-full h-2 mt-2">
+                        <div class="bg-purple-600 h-2 rounded-full" style="width: 70%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="bg-purple-600 p-1 rounded-full mt-1 mr-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-white">Tailwind CSS</h4>
+                      <p class="text-gray-400 text-sm">Intermediate</p>
+                      <div class="w-full bg-zinc-700 rounded-full h-2 mt-2">
+                        <div class="bg-purple-600 h-2 rounded-full" style="width: 75%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Backend Development Card -->
+              <div class="bg-zinc-800 p-8 rounded-xl shadow-lg border border-zinc-700 hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-1">
+                <div class="flex items-center mb-6">
+                  <div class="bg-blue-600 p-2 rounded-lg mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-bold text-white">Backend Development</h3>
+                </div>
+                <div class="space-y-5">
+                  <div class="flex items-start">
+                    <div class="bg-blue-600 p-1 rounded-full mt-1 mr-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-white">Node.js/Express</h4>
+                      <p class="text-gray-400 text-sm">Intermediate</p>
+                      <div class="w-full bg-zinc-700 rounded-full h-2 mt-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 75%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="bg-blue-600 p-1 rounded-full mt-1 mr-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-white">MongoDB</h4>
+                      <p class="text-gray-400 text-sm">Basic</p>
+                      <div class="w-full bg-zinc-700 rounded-full h-2 mt-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 50%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-start">
+                    <div class="bg-blue-600 p-1 rounded-full mt-1 mr-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-white">Git</h4>
+                      <p class="text-gray-400 text-sm">Intermediate</p>
+                      <div class="w-full bg-zinc-700 rounded-full h-2 mt-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 70%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-8 max-w-6xl mx-auto ">
+          <div class="max-w-2xl mx-auto text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4 text-white">My Projects</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
+            <p class="mt-6 text-zinc-300">Here are some of my recent works that showcase my skills and expertise.</p>
+          </div>
+    
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 ">
+            <!-- Project 1 -->
+    
+            <div
+              class="bg-zinc-800 rounded-xl overflow-hidden hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-purple-500/20">
+              <div class="overflow-hidden">
+                <img src="./assets/project-1.webp" alt="PDF Chatbot"
+                  class="w-full h-48 object-cover hover:scale-105 transition duration-500" />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2 text-white">PDF(Q&A) Chat-Bot</h3>
+                <p class="text-zinc-400 mb-4">AI-powered chatbot for PDF document interaction.</p>
+                <div class="flex gap-4">
+                  <button
+                    class="border border-purple-500 text-purple-500 px-3 py-2 rounded-lg hover:bg-purple-500 hover:text-white transition-all flex items-center "
+                    onclick="window.open('https://github.com/sameerkushwaha-124/GLA-ChatBot')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                    GitHub
+                  </button>
+                  <button
+                    class="border border-pink-500 text-pink-500 px-3 py-2 rounded-lg hover:bg-pink-500 hover:text-white transition-all flex items-center gap-2"
+                    onclick="window.open('https://gla-chatbot-eldj2eo9zu9mmwr94qfmx2.streamlit.app/')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path
+                        d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                    </svg>
+                    Live Demo
+                  </button>
+                </div>
+              </div>
+            </div>
+    
+    
+    
+    
+    
+    
+    
+    
+            <!-- Project 2 -->
+            <div
+              class="bg-zinc-800 rounded-xl overflow-hidden hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-purple-500/20">
+              <div class="overflow-hidden">
+                <img src="./assets/project-2.webp" alt="Chat App"
+                  class="w-full h-48 object-cover hover:scale-105 transition duration-500" />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2 text-white">Chat App</h3>
+                <p class="text-zinc-400 mb-4">Real-time messaging application with modern UI.</p>
+                <div class="flex gap-4">
+                  <button
+                    class="border border-purple-500 text-purple-500 px-3 py-2 rounded-lg hover:bg-purple-500 hover:text-white transition-all flex items-center"
+                    onclick="window.open('https://github.com/sameerkushwaha-124/Chat-App')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                    GitHub
+                  </button>
+                  <button
+                    class="border border-zinc-500 text-zinc-500 px-3 py-2 rounded-lg cursor-not-allowed flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path
+                        d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+                    </svg>
+                    Coming Soon
+                  </button>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Project 3 -->
+            <div
+              class="bg-zinc-800 rounded-xl overflow-hidden hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-purple-500/20">
+              <div class="overflow-hidden">
+                <img src="./assets/project-3.webp" alt="BookMate"
+                  class="w-full h-48 object-cover hover:scale-105 transition duration-500" />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2 text-white">BookMate</h3>
+                <p class="text-zinc-400 mb-4">Digital library and reading companion application.</p>
+                <div class="flex gap-4">
+                  <button
+                    class="border border-purple-500 text-purple-500 px-3 py-2 rounded-lg hover:bg-purple-500 hover:text-white transition-all flex items-center "
+                    onclick="window.open('https://github.com/sameerkushwaha-124/Bookmate')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                    GitHub
+                  </button>
+                  <button
+                    class="border border-zinc-500 text-zinc-500 px-3 py-2 rounded-lg cursor-not-allowed flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path
+                        d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+                    </svg>
+                    Coming Soon
+                  </button>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Project 4 -->
+            <div
+              class="bg-zinc-800 rounded-xl overflow-hidden hover:-translate-y-2 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-purple-500/20">
+              <div class="overflow-hidden">
+                <img src="./assets/project-4.png" alt="EMS"
+                  class="w-full h-48 object-cover hover:scale-105 transition duration-500" />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2 text-white">Employee Management</h3>
+                <p class="text-zinc-400 mb-4">System for managing employee data and records.</p>
+                <div class="flex gap-4">
+                  <button
+                    class="border border-purple-500 text-purple-500 px-3 py-2 rounded-lg hover:bg-purple-500 hover:text-white transition-all flex items-center "
+                    onclick="window.open('https://github.com/sameerkushwaha-124/EMS.git')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path
+                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                    GitHub
+                  </button>
+                  <button
+                    class="border border-pink-500 text-pink-500 px-3 py-2 rounded-lg hover:bg-pink-500 hover:text-white transition-all flex items-center "
+                    onclick="window.open('https://ems-peach-six.vercel.app')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                      <path
+                        d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                    </svg>
+                    Live Demo
+                  </button>
+                </div>
+              </div>
+            </div>
+    
+    
+          </div>
+    
+          <div class="text-center mt-16">
+            <a href="#"
+              class="inline-block px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-medium hover:shadow-lg hover:shadow-purple-500/30 transition-all">
+              View All Projects
+            </a>
+          </div>
+        </section>
+    
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-8 max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-12">Contact Me</h2>
+          <div class="flex flex-wrap justify-center gap-8">
+            <a href="mailto:sameerkushwaha2003@gmail.com"
+              class="bg-gray-800 px-6 py-3 rounded-lg shadow-md flex items-center hover:bg-gray-700 transition">
+              <img src="./assets/email.png" class="w-6 h-6 mr-2" />
+              Email Me
+            </a>
+            <a href="https://www.linkedin.com/in/sameerkushwaha124/" target="_blank"
+              class="bg-gray-800 px-6 py-3 rounded-lg shadow-md flex items-center hover:bg-gray-700 transition">
+              <img src="./assets/linkedin.png" class="w-6 h-6 mr-2" />
+              LinkedIn
+            </a>
+          </div>
+    
+    
+        </section>
+      </div>
+</body>
+</html>

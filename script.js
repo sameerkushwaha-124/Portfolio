@@ -1,6 +1,13 @@
-function toggleMenu() {
-  const menu = document.querySelector(".menu-links");
-  const icon = document.querySelector(".hamburger-icon");
-  menu.classList.toggle("open");
-  icon.classList.toggle("open");
+function loadComponent(component, elementId) {
+    fetch(component)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById(elementId).innerHTML = data;
+        });
 }
+
+// Load components
+// loadComponent('header.html', 'header');
+// loadComponent('about.html', 'about');
+loadComponent('skills.html', 'skills');
+// loadComponent('footer.html', 'footer');
