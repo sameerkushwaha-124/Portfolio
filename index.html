@@ -3,78 +3,513 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sameer Kushwaha - Portfolio</title>
-    <link rel="icon" type="image/png" href="/assets/favicon.webp">
+    <title>Sameer Kushwaha - Full Stack Developer</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.webp">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        * { font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); }
-        ::-webkit-scrollbar-thumb { background: linear-gradient(135deg, #14b8a6, #3b82f6); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(135deg, #0d9488, #2563eb); }
-    </style>
-</head>
-<body class="bg-zinc-900 text-white">
-    <div id="header"></div> <!-- Placeholder for header -->
-    <div id="main"></div>  <!-- Placeholder for about section -->
-    <div id="skills"></div> <!-- Placeholder for skills section -->
-    <div id="footer"></div> <!-- Placeholder for footer -->
-
-
-    <script >
-        function loadComponent(component, elementId) {
-            fetch(component)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(elementId).innerHTML = data;
-                });
+        
+        /* Next.js inspired gradient */
+        .gradient-bg {
+            background: linear-gradient(to bottom right, #000000, #1a1a1a, #000000);
         }
         
-        // Load components
-         loadComponent('header.html', 'header');
-         loadComponent('main.html', 'main');
-         loadComponent('footer.html', 'footer');
-    </script>
-    <script>
-        function toggleMenu() {
-          const menu = document.querySelector('.mobile-links');
-          menu.classList.toggle('hidden');
+        .gradient-text {
+            background: linear-gradient(90deg, #ffffff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-      </script>
-      <script>
-        const textArray = ["MERN Developer", "800+ DSA Problems Solved", "Full Stack Developer", "Tech Enthusiast"];
+        
+        .gradient-border {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+            padding: 1px;
+            border-radius: 12px;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .animate-fadeInUp { animation: fadeInUp 0.8s ease-out; }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #1a1a1a; }
+        ::-webkit-scrollbar-thumb { background: #404040; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #525252; }
+        
+        /* Glow effects */
+        .glow-blue { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+        .glow-purple { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+        .glow-pink { box-shadow: 0 0 20px rgba(236, 72, 153, 0.3); }
+    </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-black/80 backdrop-blur-xl border-b border-gray-800 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-white rounded-md flex items-center justify-center">
+                        <span class="text-black text-sm font-bold">SK</span>
+                    </div>
+                    <span class="font-semibold text-white text-lg">Sameer Kushwaha</span>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-400 hover:text-white transition-colors duration-200 text-sm font-medium">About</a>
+                    <a href="#projects" class="text-gray-400 hover:text-white transition-colors duration-200 text-sm font-medium">Projects</a>
+                    <a href="#skills" class="text-gray-400 hover:text-white transition-colors duration-200 text-sm font-medium">Skills</a>
+                    <a href="#contact" class="bg-white text-black px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-200 transition-colors duration-200">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 text-white" onclick="toggleMenu()">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800 py-4">
+                <div class="space-y-3">
+                    <a href="#about" class="block text-gray-400 hover:text-white transition-colors duration-200 text-sm font-medium" onclick="toggleMenu()">About</a>
+                    <a href="#projects" class="block text-gray-400 hover:text-white transition-colors duration-200 text-sm font-medium" onclick="toggleMenu()">Projects</a>
+                    <a href="#skills" class="block text-gray-400 hover:text-white transition-colors duration-200 text-sm font-medium" onclick="toggleMenu()">Skills</a>
+                    <a href="#contact" class="block bg-white text-black px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-200 transition-colors duration-200 w-fit" onclick="toggleMenu()">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="min-h-screen flex items-center justify-center px-6 pt-16 gradient-bg">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <!-- Hero Content -->
+                <div class="animate-fadeInUp">
+                    <div class="mb-8">
+                        <p class="text-gray-400 mb-4 text-lg">Hello, I'm</p>
+                        <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                            <span class="gradient-text">Sameer</span><br>
+                            <span class="text-white">Kushwaha</span>
+                        </h1>
+                        <div class="mb-8">
+                            <p class="text-2xl md:text-3xl text-gray-300 font-medium">
+                                <span id="typing-text" class="gradient-text"></span>
+                                <span class="animate-pulse text-blue-500">|</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="text-xl text-gray-400 mb-10 leading-relaxed max-w-lg">
+                        Building the future with <span class="text-white font-semibold">MERN stack</span>, 
+                        <span class="text-white font-semibold">1000+ DSA problems</span> solved, and 
+                        <span class="text-white font-semibold">scalable web applications</span>.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap gap-4 mb-12">
+                        <button class="bg-white text-black px-8 py-4 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-200 transform hover:scale-105" onclick="window.open('https://drive.google.com/file/d/1ELB0i_8xGzvWxNaVcrYUSev9X4H_GoGU/view?usp=sharing')">
+                            Download CV
+                        </button>
+                        <button class="border border-gray-600 text-white px-8 py-4 rounded-xl font-semibold hover:border-gray-400 hover:bg-gray-900 transition-all duration-200 transform hover:scale-105" onclick="location.href='#contact'">
+                            Get in Touch
+                        </button>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/in/sameerkushwaha124/" target="_blank" class="w-12 h-12 border border-gray-600 rounded-xl flex items-center justify-center hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-200 glow-blue">
+                            <img src="./assets/linkedin1.png" alt="LinkedIn" class="w-6 h-6">
+                        </a>
+                        <a href="https://github.com/sameerkushwaha-124?tab=repositories" target="_blank" class="w-12 h-12 border border-gray-600 rounded-xl flex items-center justify-center hover:border-gray-400 hover:bg-gray-800 transition-all duration-200">
+                            <img src="./assets/github.png" alt="GitHub" class="w-6 h-6">
+                        </a>
+                        <a href="https://leetcode.com/u/s_a_m2003/" target="_blank" class="w-12 h-12 border border-gray-600 rounded-xl flex items-center justify-center hover:border-orange-500 hover:bg-orange-500/10 transition-all duration-200">
+                            <img src="./assets/leetcode (1).png" alt="LeetCode" class="w-6 h-6">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Image -->
+                <div class="animate-float flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-xl opacity-30"></div>
+                        <img src="./assets/2.png" alt="Sameer Kushwaha" class="relative w-80 h-80 object-cover rounded-full border-4 border-gray-800">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-gray-950">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6">
+                    <span class="gradient-text">Featured</span> <span class="text-white">Projects</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Showcasing innovative solutions built with modern technologies and clean architecture.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Project 1: PDF Chatbot -->
+                <div class="group bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden hover:border-blue-500 transition-all duration-300 transform hover:scale-105 animate-fadeInUp">
+                    <div class="h-56 bg-gray-800 relative overflow-hidden">
+                        <img src="./assets/project-1.webp" alt="PDF Chatbot" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full">LIVE</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-blue-500/20 backdrop-blur-md text-blue-300 text-sm font-semibold px-3 py-1 rounded-full border border-blue-500/30">AI/ML</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4">
+                        <h3 class="text-base font-bold text-white mb-1">PDF Q&A ChatBot</h3>
+                        <p class="text-gray-400 mb-3 leading-relaxed text-xs">
+                            AI-powered PDF analysis with Google Gemini Pro.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            <span class="bg-gray-800 text-gray-300 text-xs font-medium px-2 py-0.5 rounded-full">Python</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs font-medium px-2 py-0.5 rounded-full">Streamlit</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs font-medium px-2 py-0.5 rounded-full">AI</span>
+                        </div>
+                        
+                        <div class="flex gap-2">
+                            <button class="flex-1 bg-white text-black px-2 py-1.5 rounded-md text-xs font-semibold hover:bg-gray-200 transition-colors duration-200" onclick="window.open('https://gla-chatbot-eldj2eo9zu9mmwr94qfmx2.streamlit.app/')">
+                                Live
+                            </button>
+                            <button class="px-2 py-1.5 border border-gray-600 text-gray-300 rounded-md text-xs font-semibold hover:border-gray-400 hover:bg-gray-800 transition-all duration-200" onclick="window.open('https://github.com/sameerkushwaha-124/GLA-ChatBot')">
+                                Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Chat App -->
+                <div class="group bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden hover:border-purple-500 transition-all duration-300 transform hover:scale-105 animate-fadeInUp">
+                    <div class="aspect-video bg-gray-800 relative overflow-hidden">
+                        <img src="./assets/project-2.webp" alt="Chat App" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full">LIVE</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-purple-500/20 backdrop-blur-md text-purple-300 text-sm font-semibold px-3 py-1 rounded-full border border-purple-500/30">Real-time</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-3">NexChat</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Real-time messaging application with Socket.IO for instant communication.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-800 text-gray-300 text-xs font-medium px-3 py-1 rounded-full">React</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs font-medium px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs font-medium px-3 py-1 rounded-full">Socket.IO</span>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-white text-black px-4 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-colors duration-200" onclick="window.open('https://chatty-sy5e.onrender.com/login/')">
+                                View Live
+                            </button>
+                            <button class="px-4 py-3 border border-gray-600 text-gray-300 rounded-xl font-semibold hover:border-gray-400 hover:bg-gray-800 transition-all duration-200" onclick="window.open('https://github.com/sameerkushwaha-124/Chat-App')">
+                                Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: BookMate -->
+                <div class="group bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden hover:border-green-500 transition-all duration-300 transform hover:scale-105 animate-fadeInUp">
+                    <div class="aspect-video bg-gray-800 relative overflow-hidden">
+                        <img src="./assets/project-3.webp" alt="BookMate" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full">DEV</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-green-500/20 backdrop-blur-md text-green-300 text-sm font-semibold px-3 py-1 rounded-full border border-green-500/30">MERN</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-3">BookMate</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Digital library management system with search and tracking capabilities.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-800 text-gray-300 text-xs font-medium px-3 py-1 rounded-full">React</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs font-medium px-3 py-1 rounded-full">Express</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs font-medium px-3 py-1 rounded-full">MongoDB</span>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-gray-600 text-gray-400 px-4 py-3 rounded-xl font-semibold cursor-not-allowed">
+                                Coming Soon
+                            </button>
+                            <button class="px-4 py-3 border border-gray-600 text-gray-300 rounded-xl font-semibold hover:border-gray-400 hover:bg-gray-800 transition-all duration-200" onclick="window.open('https://github.com/sameerkushwaha-124/Bookmate')">
+                                Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Employee Management -->
+                <div class="group bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden hover:border-blue-500 transition-all duration-300 transform hover:scale-105 animate-fadeInUp">
+                    <div class="aspect-video bg-gray-800 relative overflow-hidden">
+                        <img src="./assets/project-4.png" alt="Employee Management" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full">LIVE</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-blue-500/20 backdrop-blur-md text-blue-300 text-sm font-semibold px-3 py-1 rounded-full border border-blue-500/30">Enterprise</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-3">Employee Management</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Enterprise workflow management system with comprehensive features.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-800 text-gray-300 text-xs font-medium px-3 py-1 rounded-full">React</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs font-medium px-3 py-1 rounded-full">In Memory Storage</span>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-white text-black px-4 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-colors duration-200" onclick="window.open('https://ems-peach-six.vercel.app')">
+                                View Live
+                            </button>
+                            <button class="px-4 py-3 border border-gray-600 text-gray-300 rounded-xl font-semibold hover:border-gray-400 hover:bg-gray-800 transition-all duration-200" onclick="window.open('https://github.com/sameerkushwaha-124/EMS.git')">
+                                Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Velora -->
+                <div class="group bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden hover:border-pink-500 transition-all duration-300 transform hover:scale-105 animate-fadeInUp">
+                    <div class="aspect-video bg-gray-800 relative overflow-hidden">
+                        <img src="./assets/shoping.png" alt="Velora E-commerce" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-500 text-black text-xs font-bold px-3 py-1 rounded-full">LIVE</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-pink-500/20 backdrop-blur-md text-pink-300 text-sm font-semibold px-3 py-1 rounded-full border border-pink-500/30">E-commerce</span>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-white mb-3">Velora</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Modern shopping platform with server-side rendering and comprehensive catalog.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-800 text-gray-300 text-xs font-medium px-3 py-1 rounded-full">React</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs font-medium px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-gray-800 text-gray-300 text-xs font-medium px-3 py-1 rounded-full">SSR</span>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-white text-black px-4 py-3 rounded-xl font-semibold hover:bg-gray-200 transition-colors duration-200" onclick="window.open('https://ssr-ecommerce.onrender.com')">
+                                View Live
+                            </button>
+                            <button class="px-4 py-3 border border-gray-600 text-gray-300 rounded-xl font-semibold hover:border-gray-400 hover:bg-gray-800 transition-all duration-200" onclick="window.open('https://github.com/sameerkushwaha-124/SSR-Ecommerce.git')">
+                                Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 animate-fadeInUp">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6">
+                    <span class="text-white">Skills &</span> <span class="gradient-text">Technologies</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Technologies and tools I use to build exceptional digital experiences.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gray-900 rounded-2xl border border-gray-800 p-8 hover:border-white transition-all duration-300 animate-fadeInUp col-span-full">
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                        <button class="bg-gray-800 hover:bg-blue-600 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">HTML</button>
+                        <button class="bg-gray-800 hover:bg-blue-600 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">CSS</button>
+                        <button class="bg-gray-800 hover:bg-yellow-500 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">JavaScript</button>
+                        <button class="bg-gray-800 hover:bg-blue-500 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">React</button>
+                        <button class="bg-gray-800 hover:bg-blue-400 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">Tailwind</button>
+                        <button class="bg-gray-800 hover:bg-green-600 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">Node.js</button>
+                        <button class="bg-gray-800 hover:bg-green-500 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">Express</button>
+                        <button class="bg-gray-800 hover:bg-green-700 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">MongoDB</button>
+                        <button class="bg-gray-800 hover:bg-blue-700 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">MySQL</button>
+                        <button class="bg-gray-800 hover:bg-blue-600 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">Python</button>
+                        <button class="bg-gray-800 hover:bg-orange-600 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">Java</button>
+                        <button class="bg-gray-800 hover:bg-orange-500 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">Spring</button>
+                        <button class="bg-gray-800 hover:bg-gray-600 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">Git</button>
+                        <button class="bg-gray-800 hover:bg-blue-800 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">Docker</button>
+                        <button class="bg-gray-800 hover:bg-orange-400 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">AWS</button>
+                        <button class="bg-gray-800 hover:bg-purple-600 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">Gemini AI</button>
+                        <button class="bg-gray-800 hover:bg-red-500 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">Streamlit</button>
+                        <button class="bg-gray-800 hover:bg-purple-500 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 hover:scale-105">Socket.IO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-gray-950">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="animate-fadeInUp">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6">
+                    <span class="text-white">Let's Build</span> <span class="gradient-text">Together</span>
+                </h2>
+                <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                    Ready to bring your ideas to life? Let's discuss your next project and create something extraordinary.
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="mailto:sameerkushwaha2003@gmail.com" class="flex items-center bg-white text-black px-8 py-4 rounded-xl font-semibold hover:bg-gray-200 transition-all duration-200 transform hover:scale-105">
+                        <img src="./assets/email.png" class="w-6 h-6 mr-3">
+                        <span>Email Me</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sameerkushwaha124/" target="_blank" class="flex items-center border border-gray-600 text-white px-8 py-4 rounded-xl font-semibold hover:border-gray-400 hover:bg-gray-800 transition-all duration-200 transform hover:scale-105">
+                        <img src="./assets/linkedin.png" class="w-6 h-6 mr-3">
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-12 bg-black">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex flex-wrap justify-center gap-8 mb-6 text-sm">
+                <a href="#about" class="text-gray-400 hover:text-white transition-colors duration-200">About</a>
+                <a href="#projects" class="text-gray-400 hover:text-white transition-colors duration-200">Projects</a>
+                <a href="#skills" class="text-gray-400 hover:text-white transition-colors duration-200">Skills</a>
+                <a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-200">Contact</a>
+            </div>
+            <p class="text-gray-500">© 2024 Sameer Kushwaha. Built with Next.js inspiration.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Typing Effect
+        const textArray = ["Full Stack Developer", "1000+ DSA Problems Solved", "Problem Solver"];
         let textIndex = 0;
         let charIndex = 0;
         const typingSpeed = 100;
         const erasingSpeed = 50;
-        const delay = 1500;
-    
+        const delay = 2000;
+
         function typeEffect() {
-          const element = document.getElementById("typing-text");
-          if (charIndex < textArray[textIndex].length) {
-            element.innerHTML += textArray[textIndex].charAt(charIndex);
-            charIndex++;
-            setTimeout(typeEffect, typingSpeed);
-          } else {
-            setTimeout(eraseEffect, delay);
-          }
+            const element = document.getElementById("typing-text");
+            if (charIndex < textArray[textIndex].length) {
+                element.innerHTML += textArray[textIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeEffect, typingSpeed);
+            } else {
+                setTimeout(eraseEffect, delay);
+            }
         }
-    
+
         function eraseEffect() {
-          const element = document.getElementById("typing-text");
-          if (charIndex > 0) {
-            element.innerHTML = textArray[textIndex].substring(0, charIndex - 1);
-            charIndex--;
-            setTimeout(eraseEffect, erasingSpeed);
-          } else {
-            textIndex = (textIndex + 1) % textArray.length;
-            setTimeout(typeEffect, typingSpeed);
-          }
+            const element = document.getElementById("typing-text");
+            if (charIndex > 0) {
+                element.innerHTML = textArray[textIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(eraseEffect, erasingSpeed);
+            } else {
+                textIndex = (textIndex + 1) % textArray.length;
+                setTimeout(typeEffect, typingSpeed);
+            }
         }
-    
-        document.addEventListener("DOMContentLoaded", function () {
-          setTimeout(typeEffect, 500);
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
-      </script>
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe animated elements
+        document.querySelectorAll('.animate-fadeInUp').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            observer.observe(el);
+        });
+
+        // Start typing effect
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(typeEffect, 1000);
+        });
+    </script>
 </body>
 </html>
